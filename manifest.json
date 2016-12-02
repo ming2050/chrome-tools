@@ -1,0 +1,21 @@
+{
+  "name": "A browser action with a popup that changes the page color",
+  "description": "Change the current page color",
+  "version": "1.0",
+  "permissions": [
+    "tabs", "http://*/*", "https://*/*"
+  ],
+  "browser_action": {
+      "default_title": "Set this page's color.",
+      "default_icon": "icon.png",
+      "default_popup": "popup.html"
+  },
+  "manifest_version": 2,
+  "content_scripts":[{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["js/a.js"],
+    "run_at": "document_end",
+    "all_frames": true}
+  ],
+  "web_accessible_resources": ["js/tools.js"]
+}
