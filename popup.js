@@ -10,8 +10,12 @@ function click(e) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+	var bg = chrome.extension.getBackgroundPage();
+
   var divs = document.querySelectorAll('div');
   for (var i = 0; i < divs.length; i++) {
-    divs[i].addEventListener('click', click);
+    divs[i].addEventListener('click', function(){
+    	bg.test();
+    });
   }
 });
